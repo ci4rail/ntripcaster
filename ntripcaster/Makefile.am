@@ -2,7 +2,7 @@
 
 AUTOMAKE_OPTIONS = foreign
 
-SUBDIRS = src conf
+SUBDIRS = src
 
 install-data-local:
 	mkdir -p $(DESTDIR)$(NTRIPCASTER_LOGDIR_INST)
