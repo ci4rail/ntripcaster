@@ -161,11 +161,15 @@ void *handle_connection(void *arg)
 		thread_exit(0);
 	}
 
+	xa_debug(2, "DEBUG: Got header: %s", line);
+
 	if (ice_strncmp(line, "GET", 3) == 0) {
 		client_login(con, line);
 	} else if (ice_strncmp(line, "SOURCE", 6) == 0) {
+		xa_debug(2, "DEBUG: Do source login: %s", line);
 		source_login (con, line);
 	} else {
+		xa_debug(2, "DEBUG: Bad header: %s", line);
 		write_400 (con);
 		kick_not_connected(con, "Invalid header");
 	}
