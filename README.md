@@ -2,6 +2,32 @@
 
 This repository contains the BKG NTRIP caster set up to run under docker.
 
+Cloned from goblimey/ntripcaster. The original README.md is below.
+
+Differences:
+* Does not include the configuration files in the image. They are mounted as volumes.
+* Github ci to build a multiarch image and push the image to dockerhub.
+
+### To run the caster image:
+
+copy and modify the configuration files in the `conf` directory:
+
+```bash	
+cp conf/ntripcaster.conf.dist ntripcaster.conf
+cp conf/sourcetable.dat.dist sourcetable.dat
+mkdir -p logs
+```
+
+Adapt the configuration files to your needs (see the original README.md below).
+
+```bash
+docker run -v `pwd`/conf:/usr/local/ntripcaster/conf -v `pwd`/logs:/usr/local/ntripcaster/logs ci4rail/ntripcaster 
+```
+
+
+-----
+Original README
+
 NTRIP was invented by the German organisation Bundesamt für Kartographieund Geodäsie (BKG) - 
 in English, the Federal Agency for Cartography and Geodesy. 
 It's used to transmit corrections from a GNSS base station

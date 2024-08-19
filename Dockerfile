@@ -1,10 +1,10 @@
-FROM ubuntu:18.04 as builder
-
-COPY ntripcaster /ntripcaster
+FROM ubuntu:24.04 as builder
 
 WORKDIR /ntripcaster
 
 RUN apt-get update && apt-get install build-essential --assume-yes
+
+COPY ntripcaster /ntripcaster
 
 RUN ./configure
 
@@ -12,7 +12,7 @@ RUN make install
 
 # The builder image is dumped and a fresh image is used
 # just with the built binary, config and logs made from 'make install'
-FROM ubuntu:18.04
+FROM ubuntu:24.04
 COPY --from=builder /usr/local/ntripcaster/ /usr/local/ntripcaster/
 
 EXPOSE 2101

@@ -76,7 +76,7 @@ WRAPLIBS = @WRAPLIBS@
 
 AUTOMAKE_OPTIONS = foreign
 
-SUBDIRS = src conf
+SUBDIRS = src
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
 CONFIG_HEADER = config.h
