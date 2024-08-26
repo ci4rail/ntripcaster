@@ -261,8 +261,8 @@ setup_defaults()
 
 	xa_debug (1, "DEBUG: Setting up default values");
 
-	info.consoledebuglevel = 2;
-	info.logfiledebuglevel = 2;
+	info.consoledebuglevel = 0;
+	info.logfiledebuglevel = 0;
 	info.console_mode = DEFAULT_CONSOLE_MODE;
 
 #ifdef HAVE_UMASK
