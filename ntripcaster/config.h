@@ -82,10 +82,10 @@
 /* #undef __SOMEBSD__ */
 
 /* UNIX98 and others want socklen_t */
-#define HAVE_SOCKLEN_T 1
+/* #undef HAVE_SOCKLEN_T */
 
 /* The complete version of icecast */
-#define VERSION "0.1.0"
+#define VERSION "0.1.5"
 
 /* Definately Solaris */
 /* #undef SOLARIS */
@@ -265,5 +265,5 @@
 #define PACKAGE "ntripcaster"
 
 /* Version number of package */
-#define VERSION "0.1.0"
+#define VERSION "0.1.5"
 

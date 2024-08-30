@@ -23,9 +23,7 @@ else
 fi
 
 NTRIPCASTER_BINDIR=${prefix}/bin
-NTRIPCASTER_ETCDIR_INST=${prefix}/conf
 NTRIPCASTER_LOGDIR_INST=${prefix}/logs
-NTRIPCASTER_ETCDIR=conf
 NTRIPCASTER_LOGDIR=logs
 NTRIPCASTER_SHAREDIR=${prefix}
 
@@ -35,11 +33,8 @@ AC_DEFINE_UNQUOTED(VERSION, "$VERSION")
 AC_SUBST(VERSION)
 
 AC_SUBST(NTRIPCASTER_BINDIR)
-AC_SUBST(NTRIPCASTER_ETCDIR_INST)
 AC_SUBST(NTRIPCASTER_LOGDIR_INST)
 
-AC_DEFINE_UNQUOTED(NTRIPCASTER_ETCDIR, "$NTRIPCASTER_ETCDIR")
-AC_SUBST(NTRIPCASTER_ETCDIR)
 AC_DEFINE_UNQUOTED(NTRIPCASTER_LOGDIR, "$NTRIPCASTER_LOGDIR")
 AC_SUBST(NTRIPCASTER_LOGDIR)
 
@@ -417,7 +412,7 @@ AC_CHECK_FUNCS(gettimeofday strstr snprintf vsnprintf rename setpgid basename se
 AC_MSG_CHECKING(if libm is bundled with some lib we're already linking)
 AC_TRY_LINK(, [sin(1);],AC_MSG_RESULT(yes);LDLAGS="",AC_MSG_RESULT(no);LDFLAGS="-lm")
 
-AC_OUTPUT([Makefile src/Makefile conf/Makefile conf/ntripcaster.conf.dist])
+AC_OUTPUT([Makefile src/Makefile])
 
 echo "Ok, everything seems ok. Now do 'make'."
 echo "You can then run make install to install as you specified"

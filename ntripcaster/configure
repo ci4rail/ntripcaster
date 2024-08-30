@@ -5591,7 +5591,7 @@ echo "${ECHO_T}no" >&6;LDFLAGS="-lm"
 fi
 rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
 
-ac_config_files="$ac_config_files Makefile src/Makefile conf/Makefile conf/ntripcaster.conf.dist"
+ac_config_files="$ac_config_files Makefile src/Makefile"
 cat >confcache <<\_ACEOF
 # This file is a shell script that caches the results of configure
 # tests run on this system so they can be shared between configure
@@ -5910,8 +5910,6 @@ do
   # Handling of arguments.
   "Makefile" ) CONFIG_FILES="$CONFIG_FILES Makefile" ;;
   "src/Makefile" ) CONFIG_FILES="$CONFIG_FILES src/Makefile" ;;
-  "conf/Makefile" ) CONFIG_FILES="$CONFIG_FILES conf/Makefile" ;;
-  "conf/ntripcaster.conf.dist" ) CONFIG_FILES="$CONFIG_FILES conf/ntripcaster.conf.dist" ;;
   "default-1" ) CONFIG_COMMANDS="$CONFIG_COMMANDS default-1" ;;
   "config.h" ) CONFIG_HEADERS="$CONFIG_HEADERS config.h" ;;
   *) { { echo "$as_me:5917: error: invalid argument: $ac_config_target" >&5
