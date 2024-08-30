@@ -24,6 +24,70 @@ Adapt the configuration files to your needs (see the original README.md below).
 docker run -v `pwd`/conf:/usr/local/ntripcaster/conf -v `pwd`/logs:/usr/local/ntripcaster/logs ci4rail/ntripcaster 
 ```
 
+Here is and example of the configuration file `ntripcaster.conf`:
+```
+##################################
+# NtripCaster configuration file #
+################################################################################
+
+############### Server Location and Resposible Person ##########################
+# Server meta info with no fuctionality.
+
+location <NTRIP Caster server geographical location>
+rp_email <Responsible Person Email>
+server_url <URL for this NTRIP Caster server>
+
+########################### Server Limits ######################################
+# Maximum number of simultaneous connections.
+
+max_clients 500
+max_clients_per_source 500
+max_sources 40
+
+######################### Server passwords #####################################
+# The "encoder_password" is used from the sources to log in.
+
+encoder_password <Your Password>
+
+#################### Server IP/port configuration ##############################
+# The server_name specifies the hostname of the server and must not be set to
+# an IP-adress. It is very important that server_name resolves to the IP-adress
+# the server is running at.
+# For every port, the server should listen to, a new port line can be added.
+
+server_name dynamic
+#port 80
+port 2101
+
+######################## Main Server Logfile ##################################
+# logfile contains information about connections, warnings, errors etc.
+
+logdir /usr/local/ntripcaster/logs
+logfile ntripcaster.log
+
+############################ Access Control ###################################
+# Here you specify which users have access to which mountpoints,
+# one line per mount.
+#
+# Syntax: /<MOUNTPOINT>:<USER1>:<PASSWORD1>,<USER2>:<PASSWORD2>,...,<USERn>:<PASSWORDn>
+#
+# /<MOUNTPOINT>: name of the mountpoint. Must start with a slash.
+# <USERi>: name of the user that has access to <MOUNTPOINT>.
+# <PASSWORDi>: password of <USERi>.
+#
+
+# example:
+#/mount0:user0:pass0,user1:pass1,user2:pass2
+/DEFAULT:user1:password1,user2:password2
+
+```
+
+Here is and example of the configuration file `sourcetable.dat`:
+
+```
+CAS;www.euref-ip.net;2101;EUREF-IP;BKG;0;DEU;50.12;8.69;http://www.euref-ip.net/home
+STR;DEFAULT;Nuernberg;RTCM 3.0;;;;;DEU;0.00;0.00;1;0;sNTRIP;none;N;N;0;;
+```
 
 -----
 Original README
