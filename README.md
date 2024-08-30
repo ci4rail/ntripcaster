@@ -24,7 +24,7 @@ Adapt the configuration files to your needs (see the original README.md below).
 docker run -v `pwd`/conf:/usr/local/ntripcaster/conf -v `pwd`/logs:/usr/local/ntripcaster/logs ci4rail/ntripcaster 
 ```
 
-Here is and example of the configuration file `ntripcaster.conf`:
+Here is an example of the configuration file `ntripcaster.conf`:
 ```
 ##################################
 # NtripCaster configuration file #
@@ -82,7 +82,7 @@ logfile ntripcaster.log
 
 ```
 
-Here is and example of the configuration file `sourcetable.dat`:
+Here is an example of the configuration file `sourcetable.dat`:
 
 ```
 CAS;www.euref-ip.net;2101;EUREF-IP;BKG;0;DEU;50.12;8.69;http://www.euref-ip.net/home
